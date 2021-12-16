@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,26 +17,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="751" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="ID7-kX-hXC">
-                                <rect key="frame" x="87" y="233" width="200" height="200"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fake Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1m-Ah-a00">
-                                <rect key="frame" x="87" y="402.5" width="200" height="30.5"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vxm-AC-Ydu" userLabel="LogoView">
+                                <rect key="frame" x="87.5" y="223.5" width="200" height="190"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="751" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="ID7-kX-hXC">
+                                        <rect key="frame" x="0.0" y="-10" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="sPg-AZ-L5n"/>
+                                            <constraint firstAttribute="height" constant="200" id="srV-3u-JRf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fake Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1m-Ah-a00">
+                                        <rect key="frame" x="6" y="159.5" width="188" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ID7-kX-hXC" secondAttribute="bottom" id="6gP-2g-WvM"/>
+                                    <constraint firstAttribute="bottom" secondItem="V1m-Ah-a00" secondAttribute="bottom" id="Mxs-dJ-glM"/>
+                                    <constraint firstItem="ID7-kX-hXC" firstAttribute="leading" secondItem="Vxm-AC-Ydu" secondAttribute="leading" id="T9e-M4-hRe"/>
+                                    <constraint firstAttribute="trailing" secondItem="ID7-kX-hXC" secondAttribute="trailing" id="asv-Us-DmW"/>
+                                    <constraint firstItem="ID7-kX-hXC" firstAttribute="top" secondItem="Vxm-AC-Ydu" secondAttribute="top" constant="-10" id="iZ9-Hc-ogj"/>
+                                    <constraint firstItem="V1m-Ah-a00" firstAttribute="centerX" secondItem="Vxm-AC-Ydu" secondAttribute="centerX" id="szo-hg-f5a"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ID7-kX-hXC" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="233" id="E5U-ZR-CrJ"/>
-                            <constraint firstItem="ID7-kX-hXC" firstAttribute="trailing" secondItem="V1m-Ah-a00" secondAttribute="trailing" id="Ewm-gM-Ijx"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="ID7-kX-hXC" secondAttribute="bottom" constant="234" id="L3Q-cn-Bal"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="ID7-kX-hXC" secondAttribute="trailing" constant="88" id="OJe-zd-2Bv"/>
-                            <constraint firstItem="V1m-Ah-a00" firstAttribute="leading" secondItem="ID7-kX-hXC" secondAttribute="leading" id="Tte-GY-y7F"/>
-                            <constraint firstItem="ID7-kX-hXC" firstAttribute="bottom" secondItem="V1m-Ah-a00" secondAttribute="bottom" id="dUm-IM-hDd"/>
-                            <constraint firstItem="ID7-kX-hXC" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="87" id="fPz-et-tQK"/>
+                            <constraint firstItem="Vxm-AC-Ydu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Tk9-eB-x8p"/>
+                            <constraint firstItem="Vxm-AC-Ydu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-15" id="jAl-bY-MPL"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -46,5 +60,8 @@
     </scenes>
     <resources>
         <image name="TwitterLogoBlue" width="200" height="200"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
